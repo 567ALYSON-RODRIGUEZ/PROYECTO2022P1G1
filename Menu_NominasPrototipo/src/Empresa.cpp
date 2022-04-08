@@ -173,4 +173,49 @@ Empresa::searchE()
 	}
 }
 
+Empresa::deletE()
+{
+	system("cls");
+	fstream file,file1;
+	int numero_EmpresaN;
+	int found=0;
+	cout<<"\n-------------------------Detalles Empresa a Borrar-------------------------"<<endl;
+	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	if(!file)
+	{
+		cout<<"\n\t\t\tNo hay informacion...";
+		file.close();
+	}
+	else
+	{
+		cout<<"\n Ingrese el DPI del Empleado que quiere borrar: ";
+		cin>>numero_EmpresaN;
+		file1.open("RegistroDatosEmpresa.txt",ios::app | ios::out | ios::binary);
+		file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
+		while(!file.eof())
+		{
+			if(numero_EmpresaN!= companyNumber)
+			{
+				file1<<std::left<<std::setw(15)<< nameE <<std::left<<std::setw(15)<< ecoActivity <<std::left<<std::setw(15)<< mail <<std::left<<std::setw(15)<< nameR <<std::left<<std::setw(15)<< nit <<std::left<<std::setw(15)<< address <<std::left<<std::setw(15)<< phone << std::left<<std::setw(15)<< staffNumber <<std::left<<std::setw(15)<< companyNumber <<"\n";
+			}
+			else
+			{
+				found++;
+				cout << "\n\t\t\tBorrado de informacion exitoso";
+			}
+			file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
+		}
+		if(found==0)
+		{
+			cout<<"\n\t\t\t DPI Empresa no encontrada...";
+			getch();
+		}
+		file1.close();
+		file.close();
+		remove("datosEmpresa.txt");
+		rename("RegistroDatosEmpresa.txt","datosEmpresa.txt");
+	}
+}
+
+
 
