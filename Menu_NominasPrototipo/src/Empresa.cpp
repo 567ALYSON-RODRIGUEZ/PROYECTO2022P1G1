@@ -37,3 +37,38 @@ Empresa::insertE()
 	file.close();
 }
 
+Empresa::display()
+{
+	system("cls");
+	fstream file;
+	int total=0;
+	cout<<"\n-------------------------Tabla de Informacion de Empresa -------------------------"<<endl;
+	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	if(!file)
+	{
+		cout<<"\n\t\t\tNo hay información...";
+		file.close();
+	}
+	else
+	{
+		file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
+		while(!file.eof())
+		{
+			total++;
+			cout<<"\n\n\t\t\t Nombre Empresa: "<<nameE<<endl;
+			cout<<"\t\t\t Actividad Economica: "<<ecoActivity<<endl;
+			cout<<"\t\t\t Correo Empresa: "<<mail<<endl;
+			cout<<"\t\t\t Gerente/Representante legal: "<<nameR<<endl;
+			cout<<"\t\t\t Direccion: "<<address<<endl;
+			cout<<"\t\t\t No.telefono: "<<phone<<endl;
+			cout<<"\t\t\t No.de empleados: "<<staffNumber<<endl;
+			cout<<"\t\t\t No.de Empresa "<<companyNumber<<endl;
+			file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
+		if(total==0)
+		{
+			cout<<"\n\t\t\tNo hay informacion...";
+		}
+	}
+	file.close();
+	}
+}

@@ -41,8 +41,15 @@
 	<fstream>
 	"Procesos.h"
 
-1649375427 source:c:\users\dell\progra\proyectofinal\proyecto2022p1g1\menu_nominasprototipo\src\empresa.cpp
+1649380479 source:c:\users\dell\progra\proyectofinal\proyecto2022p1g1\menu_nominasprototipo\src\empresa.cpp
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<iostream>
+	<fstream>
 	"Empresa.h"
 
-1649375427 c:\users\dell\progra\proyectofinal\proyecto2022p1g1\menu_nominasprototipo\include\empresa.h
+1649378951 c:\users\dell\progra\proyectofinal\proyecto2022p1g1\menu_nominasprototipo\include\empresa.h
+	<cstring>
 
