@@ -9,6 +9,7 @@ using namespace std;
 
 main(){
     Menuintermedio menu2;
+
     //Procesos mantenimiento;
 
    int choice;

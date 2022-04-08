@@ -4,7 +4,7 @@
 #include<iomanip>
 #include<iostream>
 #include<fstream>
-#include "Empresa.h"
+#include "Empresa.h"2
 using namespace std;
 
 //Metodos de clase Empresa (menu Empresa)
@@ -14,27 +14,38 @@ Empresa::insertE()
 	fstream file;
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------------Informacion Empresa ---------------------------------------------"<<endl;
-	cout<<"\t\t\tIngresa Nombre de la Empresa         : ";
+	cout<<"\t\t\tIngresa Nombre de la Empresa: ";
 	cin>>nameE;
-	cout<<"\t\t\tIngresa Actividad Economica    : ";
+	cout<<"\t\t\tIngresa Actividad Economica: ";
 	cin>>ecoActivity;
-	cout<<"\t\t\tIngresa Correo Electronico  : ";
+	cout<<"\t\t\tIngresa Correo Electronico: ";
 	cin>>mail;
 	cout<<"\t\t\tIngresa Nombre del Gerente o Representante legal: ";
 	cin>>nameR;
-	cout<<"\t\t\tIngresa No.de nit  : ";
+	cout<<"\t\t\tIngresa No.de nit: ";
 	cin>>nit;
-	cout<<"\t\t\tIngresa Direccion de la Empresa  : ";
+	cout<<"\t\t\tIngresa Direccion de la Empresa: ";
 	cin>>address;
-	cout<<"\t\t\tIngresa No.de Telefono  : ";
+	cout<<"\t\t\tIngresa No.de Telefono: ";
 	cin>>phone;
-	cout<<"\t\t\tIngresa No.de trabajadores  : ";
+	cout<<"\t\t\tIngresa No.de trabajadores: ";
 	cin>>staffNumber;
-	cout<<"\t\t\tIngresa No.de Empresa  : ";
+	cout<<"\t\t\tIngresa No.de Empresa: ";
 	cin>>companyNumber;
 	file.open("datosEmpresa.txt", ios::app | ios::out | ios::binary);
 	file<<std::left<<std::setw(15)<< nameE <<std::left<<std::setw(15)<< ecoActivity <<std::left<<std::setw(15)<< mail <<std::left<<std::setw(15)<< nameR <<std::left<<std::setw(15)<< nit <<std::left<<std::setw(15)<< address <<std::left<<std::setw(15)<< phone << std::left<<std::setw(15)<< staffNumber <<std::left<<std::setw(15)<< companyNumber <<"\n";
 	file.close();
+}
+
+Empresa::ingresarE()
+{
+    char z;
+do
+    	{
+    		insertE();
+    		cout<<"\n\t\t\t Agrega otra empresa(Y,N): ";
+    		cin>>z;
+		}while(z=='y'||z=='Y');
 }
 
 Empresa::menu()
@@ -64,31 +75,35 @@ Empresa::menu()
 	cout<<"Ingresa tu Opcion: ";
     cin>>choice2;
 
-    switch(choice2)
+     switch(choice2)
     {
-	case 1:
+    case 1:
+        ingresarE();
+        getch();
+        break;
+	case 2:
 		mostrarE.display();
 		getch();
 		break;
-	case 2:
+	case 3:
 		modificarE.modify();
 		getch();
 		break;
-	case 3:
+	case 4:
 		buscarE.searchE();
 		getch();
 		break;
-	case 4:
+	case 5:
 		borrarE.deletE();
 		break;
-	case 5:
+	case 6:
 		break;
 	default:
 		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
 		getch();
 	}
 	//getch();
-    }while(choice2!= 5);
+    }while(choice2!= 6);
 }
 
 Empresa::display()
