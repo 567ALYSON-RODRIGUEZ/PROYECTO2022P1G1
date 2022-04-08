@@ -297,7 +297,7 @@ Empleados::deletE()
 	{
 		cout<<"\n Ingrese el DPI del Empleado que quiere borrar: ";
 		cin>>participant_idEmpleado;
-		file1.open("RecordEmpleados.txt",ios::app | ios::out);
+		file1.open("RecorEmpleados.txt",ios::app | ios::out);
 		file >> id >> name >> phone >> mail >> affiliation;
 		while(!file.eof())
 		{

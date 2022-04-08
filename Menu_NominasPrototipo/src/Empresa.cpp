@@ -32,11 +32,10 @@ Empresa::insertE()
 	cin>>staffNumber;
 	cout<<"\t\t\tIngresa No.de Empresa: ";
 	cin>>companyNumber;
-	file.open("datosEmpresa.txt", ios::app | ios::out | ios::binary);
+	file.open("datosEmpresa.dat", ios::app | ios::out | ios::binary);
 	file<<std::left<<std::setw(15)<< nameE <<std::left<<std::setw(15)<< ecoActivity <<std::left<<std::setw(15)<< mail <<std::left<<std::setw(15)<< nameR <<std::left<<std::setw(15)<< nit <<std::left<<std::setw(15)<< address <<std::left<<std::setw(15)<< phone << std::left<<std::setw(15)<< staffNumber <<std::left<<std::setw(15)<< companyNumber <<"\n";
 	file.close();
 }
-
 Empresa::ingresarE()
 {
     char z;
@@ -112,7 +111,7 @@ Empresa::display()
 	fstream file;
 	int total=0;
 	cout<<"\n-------------------------Tabla de Informacion de Empresa -------------------------"<<endl;
-	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	file.open("datosEmpresa.dat",ios::in| ios::binary);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay información...";
@@ -149,7 +148,7 @@ Empresa::modify()
 	int numero_Empresa;
 	int found=0;
 	cout<<"\n-------------------------Modificacion Datos de Empresa-------------------------"<<endl;
-	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	file.open("datosEmpresa.dat",ios::in| ios::binary);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay informacion..,";
@@ -159,7 +158,7 @@ Empresa::modify()
 	{
 		cout<<"\n Ingrese el numero de empresa que desea modificar: ";
 		cin>>numero_Empresa;
-		file1.open("RegistroDatosEmpresa.txt",ios::app | ios::out| ios::binary);
+		file1.open("RegistroDatosEmpresa.dat",ios::app | ios::out| ios::binary);
 		file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
 		while(!file.eof())
 		{
@@ -195,8 +194,8 @@ Empresa::modify()
 		}
 		file1.close();
 		file.close();
-		remove("datosEmpresa.txt");
-		rename("RegistroDatosEmpresa.txt","datosEmpresa.txt");
+		remove("datosEmpresa.dat");
+		rename("RegistroDatosEmpresa.dat","datosEmpresa.dat");
 	}
 }
 
@@ -205,7 +204,7 @@ Empresa::searchE()
 	system("cls");
 	fstream file;
 	int found=0;
-	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	file.open("datosEmpresa.dat",ios::in| ios::binary);
 	if(!file)
 	{
 		cout<<"\n-------------------------Datos de la Empresa buscada------------------------"<<endl;
@@ -249,7 +248,7 @@ Empresa::deletE()
 	int numero_EmpresaN;
 	int found=0;
 	cout<<"\n-------------------------Detalles Empresa a Borrar-------------------------"<<endl;
-	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	file.open("datosEmpresa.dat",ios::in| ios::binary);
 	if(!file)
 	{
 		cout<<"\n\t\t\tNo hay informacion...";
@@ -259,7 +258,7 @@ Empresa::deletE()
 	{
 		cout<<"\n Ingrese el DPI del Empleado que quiere borrar: ";
 		cin>>numero_EmpresaN;
-		file1.open("RegistroDatosEmpresa.txt",ios::app | ios::out | ios::binary);
+		file1.open("RegistroDatosEmpresa.dat",ios::app | ios::out | ios::binary);
 		file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
 		while(!file.eof())
 		{
@@ -281,8 +280,8 @@ Empresa::deletE()
 		}
 		file1.close();
 		file.close();
-		remove("datosEmpresa.txt");
-		rename("RegistroDatosEmpresa.txt","datosEmpresa.txt");
+		remove("datosEmpresa.dat");
+		rename("RegistroDatosEmpresa.dat","datosEmpresa.dat");
 	}
 }
 
