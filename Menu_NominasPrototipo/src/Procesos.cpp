@@ -66,7 +66,7 @@ Empleados::menu()
 	cout<<"\t\t\t 6. Volver al menu superior"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6/7]"<<endl;
+	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"Ingresa tu Opcion: ";
     cin>>choice1;

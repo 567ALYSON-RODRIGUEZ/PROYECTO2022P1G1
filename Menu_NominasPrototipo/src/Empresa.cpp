@@ -37,6 +37,60 @@ Empresa::insertE()
 	file.close();
 }
 
+Empresa::menu()
+{
+    Empresa mostrarE;
+    Empresa modificarE;
+    Empresa buscarE;
+    Empresa borrarE;
+    int choice2;
+	do
+    {
+	system("cls");
+
+	cout<<"\t\t\t-------------------------------"<<endl;
+	cout<<"\t\t\t |   SISTEMA GESTION EMPRESA |"<<endl;
+	cout<<"\t\t\t-------------------------------"<<endl;
+	cout<<"\t\t\t 1. Ingreso Empresa"<<endl;
+	cout<<"\t\t\t 2. Despliegue Empresa"<<endl;
+	cout<<"\t\t\t 3. Modifica Empresa"<<endl;
+	cout<<"\t\t\t 4. Busca Empresa"<<endl;
+	cout<<"\t\t\t 5. Borra Empresa"<<endl;
+	cout<<"\t\t\t 6. Volver al menu superior"<<endl;
+
+	cout<<"\t\t\t-------------------------------"<<endl;
+	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
+	cout<<"\t\t\t-------------------------------"<<endl;
+	cout<<"Ingresa tu Opcion: ";
+    cin>>choice2;
+
+    switch(choice2)
+    {
+	case 1:
+		mostrarE.display();
+		getch();
+		break;
+	case 2:
+		modificarE.modify();
+		getch();
+		break;
+	case 3:
+		buscarE.searchE();
+		getch();
+		break;
+	case 4:
+		borrarE.deletE();
+		break;
+	case 5:
+		break;
+	default:
+		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
+		getch();
+	}
+	//getch();
+    }while(choice2!= 5);
+}
+
 Empresa::display()
 {
 	system("cls");
