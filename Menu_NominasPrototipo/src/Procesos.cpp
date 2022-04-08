@@ -122,7 +122,7 @@ Menuintermedio::Menuxcategorias()
 	cout<<"\t\t\t 7. Volver al menu principal"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"\t\t\tOpcion a escoger:[1/2/3/4]"<<endl;
+	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6/7]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"Ingresa tu Opcion: ";
     cin>>choice2;

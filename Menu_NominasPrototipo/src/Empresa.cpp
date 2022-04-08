@@ -72,3 +72,63 @@ Empresa::display()
 	file.close();
 	}
 }
+
+Empresa::modify()
+{
+	system("cls");
+	fstream file,file1;
+	int numero_Empresa;
+	int found=0;
+	cout<<"\n-------------------------Modificacion Datos de Empresa-------------------------"<<endl;
+	file.open("datosEmpresa.txt",ios::in| ios::binary);
+	if(!file)
+	{
+		cout<<"\n\t\t\tNo hay informacion..,";
+		file.close();
+	}
+	else
+	{
+		cout<<"\n Ingrese el numero de empresa que desea modificar: ";
+		cin>>numero_Empresa;
+		file1.open("RegistroDatosEmpresa.txt",ios::app | ios::out| ios::binary);
+		file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
+		while(!file.eof())
+		{
+			if(numero_Empresa!=companyNumber)
+			{
+            file1<<std::left<<std::setw(15)<< nameE <<std::left<<std::setw(15)<< ecoActivity <<std::left<<std::setw(15)<< mail <<std::left<<std::setw(15)<< nameR <<std::left<<std::setw(15)<< nit <<std::left<<std::setw(15)<< address <<std::left<<std::setw(15)<< phone << std::left<<std::setw(15)<< staffNumber <<std::left<<std::setw(15)<< companyNumber <<"\n";
+			}
+			else
+			{
+			    cout<<"\t\t\tIngresa Nombre de la Empresa: ";
+                cin>>nameE;
+                cout<<"\t\t\tIngresa Actividad Economica: ";
+                cin>>ecoActivity;
+                cout<<"\t\t\tIngresa Correo Electronico: ";
+                cin>>mail;
+                cout<<"\t\t\tIngresa Nombre del Gerente o Representante legal: ";
+                cin>>nameR;
+                cout<<"\t\t\tIngresa No.de nit: ";
+                cin>>nit;
+                cout<<"\t\t\tIngresa Direccion de la Empresa: ";
+                cin>>address;
+                cout<<"\t\t\tIngresa No.de Telefono: ";
+                cin>>phone;
+                cout<<"\t\t\tIngresa No.de trabajadores: ";
+                cin>>staffNumber;
+	            cout<<"\t\t\tIngresa No.de Empresa: ";
+                cin>>companyNumber;
+				file1<<std::left<<std::setw(15)<< nameE <<std::left<<std::setw(15)<< ecoActivity <<std::left<<std::setw(15)<< mail <<std::left<<std::setw(15)<< nameR <<std::left<<std::setw(15)<< nit <<std::left<<std::setw(15)<< address <<std::left<<std::setw(15)<< phone << std::left<<std::setw(15)<< staffNumber <<std::left<<std::setw(15)<< companyNumber <<"\n";
+				found++;
+			}
+			file >> nameE >> ecoActivity >> mail >> nameR >> nit >> address >> phone >> staffNumber >> companyNumber ;
+
+		}
+		file1.close();
+		file.close();
+		remove("datosEmpresa.txt");
+		rename("RegistroDatosEmpresa.txt","datosEmpresa.txt");
+	}
+}
+
+
