@@ -66,7 +66,7 @@ Empleados::menu()
 	cout<<"\t\t\t 6. Volver al menu superior"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6]"<<endl;
+	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5/6/7]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"Ingresa tu Opcion: ";
     cin>>choice1;
@@ -113,10 +113,13 @@ Menuintermedio::Menuxcategorias()
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\t |   SISTEMA DE MANTENIMIENTO |"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"\t\t\t 1. Modificar empleados"<<endl;
-	cout<<"\t\t\t 2. Modificar empresa"<<endl;
-	cout<<"\t\t\t 3. Modificar puestos"<<endl;
-	cout<<"\t\t\t 4. Volver al menu principal"<<endl;
+	cout<<"\t\t\t 1. CRUD Empleados"<<endl;
+	cout<<"\t\t\t 2. CRUD Empresa"<<endl;
+	cout<<"\t\t\t 3. CRUD Puestos"<<endl;
+	cout<<"\t\t\t 4. CRUD Departamentos"<<endl;
+	cout<<"\t\t\t 5. CRUD Bancos"<<endl;
+	cout<<"\t\t\t 6. CRUD Conceptos"<<endl;
+	cout<<"\t\t\t 7. Volver al menu principal"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"\t\t\tOpcion a escoger:[1/2/3/4]"<<endl;
@@ -138,12 +141,21 @@ Menuintermedio::Menuxcategorias()
 	case 4:
 
 		break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 7:
+
+        break;
 	default:
 		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
 		getch();
 	}
 	//getch();
-    }while(choice2!= 4);
+    }while(choice2!= 7);
 }
 Empleados::display()
 {
